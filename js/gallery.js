@@ -80,7 +80,7 @@ function swapPhoto() {
   var description = document.getElementsByClassName("description");
   var date = document.getElementsByClassName("date");
 
-  location[0].innerHTML = `<p class="location">Location: </p>"
+  location[0].innerHTML = `<p class="location">Location: </p>`
 
 
 
