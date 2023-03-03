@@ -72,15 +72,21 @@ function swapPhoto() {
     mCurrentIndex = mImages.length - 1
   }
 
-  var mPhoto = document.getElementById("photo");
+  document.getElementById("photo").src = mImages.images[mCurrentIndex].imgPath;
+  var loc = document.getElementsByClassName('location');
+  loc[0].innerHTML = "Location: " + mImages.images[mCurrentIndex].imgLocation;
+  var des = document.getElementsByClassName('description');
+  des[0].innerHTML = "Description: " + mImages.images[mCurrentIndex].description;
+  var dt = document.getElementsByClassName('date');
+  dt[0].innerHTML = "Date: " + mImages.images[mCurrentIndex].date;
 
-  mImages[mCurrentIndex].src = mPhoto.img;
+  
 
-  var location = document.getElementsByClassName("location");
-  var description = document.getElementsByClassName("description");
-  var date = document.getElementsByClassName("date");
 
-  location[0].innerHTML = `<p class="location">Location: </p>`
+
+  mLastFrameTime = 0;
+  mCurrentIndex += 1;
+
 
 
 
@@ -115,18 +121,32 @@ window.addEventListener('load', function() {
 
 }, false);
 
+function iterateJSON(){
 
+  for(var x = 0; x < mJson.images.length; x++){
+    mImages[x] = new GalleryImage();
+    mImages[x].location = mJson.images[x].imgLocation;
+    mImages[x].description = mJson.images[x].imgLocation;
+    mImages[x].date = mJson.images[x].imgLocation;
+    mImages[x].img = mJson.images[x].imgLocation;
+  }
+
+
+
+}
 
 function fetchJSON() {
   mRequest.onreadystatechange = function() {
     console.log("ready state change!");
     if (this.readyState == 4 && this.status == 200) {
-      mJson = JSON.parse(mRequest.responseText);
+      mImages = JSON.parse(mRequest.responseText);
     }
   }
   mRequest.open("GET", mUrl, true);
   mRequest.send();
 }
+
+
 
 fetchJSON();
 

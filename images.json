@@ -9,7 +9,7 @@
         {
             "imgPath": "img/places/austria.jpg",
             "imgLocation": "Austria",
-            "description": "Austrian chapel",
+            "description": "Austrian Chapel",
             "date": "01/02/2016"
         },
         {
@@ -21,13 +21,13 @@
         {
             "imgPath": "img/places/greece.jpg",
             "imgLocation": "Greece",
-            "description": "Greek coastline",
+            "description": "Greek Coastline",
             "date": "01/04/2016"
         },
         {
             "imgPath": "img/places/hungary.jpg",
             "imgLocation": "Hungary",
-            "description": "Budapest skyline",
+            "description": "Budapest Skyline",
             "date": "01/05/2016"
         },
         {
@@ -57,13 +57,13 @@
         {
             "imgPath": "img/places/norway.jpg",
             "imgLocation": "Norway",
-            "description": "Countryside mountains",
+            "description": "Countryside Mountains",
             "date": "01/10/2016"
         },
         {
             "imgPath": "img/places/switzerland.jpg",
             "imgLocation": "Switzerland",
-            "description": "Lake castle",
+            "description": "Lake Castle",
             "date": "01/11/2016"
         },
         {
