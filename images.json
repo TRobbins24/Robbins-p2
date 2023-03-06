@@ -1,82 +1,46 @@
 {
     "images": [
         {
-            "imgPath": "img/places/australia.jpg",
-            "imgLocation": "Australia",
-            "description": "Loch Ard Gorge",
-            "date": "01/01/2016"
+            "imgPath": "img/places/rome.png",
+            "imgLocation": "Rome, Italy",
+            "description": "The Colosseum",
+            "date": "80 AD"
         },
         {
-            "imgPath": "img/places/austria.jpg",
-            "imgLocation": "Austria",
-            "description": "Austrian Chapel",
-            "date": "01/02/2016"
+            "imgPath": "img/places/china.png",
+            "imgLocation": "Northern China",
+            "description": "The Great Wall of China",
+            "date": "220 BC"
         },
         {
-            "imgPath": "img/places/france.jpg",
-            "imgLocation": "Paris",
-            "description": "Eiffel Tower",
-            "date": "01/03/2016"
+            "imgPath": "img/places/india.png",
+            "imgLocation": "Agra, India",
+            "description": "The Taj Mahal",
+            "date": "1648 AD"
         },
         {
-            "imgPath": "img/places/greece.jpg",
-            "imgLocation": "Greece",
-            "description": "Greek Coastline",
-            "date": "01/04/2016"
+            "imgPath": "img/places/rio.png",
+            "imgLocation": "Rio de Janeiro",
+            "description": "Christ the Redeemer",
+            "date": "03/01/1565"
         },
         {
-            "imgPath": "img/places/hungary.jpg",
-            "imgLocation": "Hungary",
-            "description": "Budapest Skyline",
-            "date": "01/05/2016"
+            "imgPath": "img/places/machu.png",
+            "imgLocation": "Peruvian Andes Mountains, Peru",
+            "description": "Machu Picchu",
+            "date": "07/24/1911"
         },
         {
-            "imgPath": "img/places/india.jpg",
-            "imgLocation": "India",
-            "description": "Taj Mahal",
+            "imgPath": "img/places/aztec.png",
+            "imgLocation": "Chichén Itzá, Mexico",
+            "description": "Mayan City",
             "date": "01/06/2016"
         },
         {
-            "imgPath": "img/places/italy.jpg",
-            "imgLocation": "Italy",
-            "description": "Venice",
+            "imgPath": "img/places/jordan.png",
+            "imgLocation": "Petra, Jordan",
+            "description": "The Rose City",
             "date": "01/07/2016"
-        },
-        {
-            "imgPath": "img/places/japan.jpg",
-            "imgLocation": "Japan",
-            "description": "Hirosaki Castle",
-            "date": "01/08/2016"
-        },
-        {
-            "imgPath": "img/places/korea.jpg",
-            "imgLocation": "South Korea",
-            "description": "Seoul",
-            "date": "01/09/2016"
-        },
-        {
-            "imgPath": "img/places/norway.jpg",
-            "imgLocation": "Norway",
-            "description": "Countryside Mountains",
-            "date": "01/10/2016"
-        },
-        {
-            "imgPath": "img/places/switzerland.jpg",
-            "imgLocation": "Switzerland",
-            "description": "Lake Castle",
-            "date": "01/11/2016"
-        },
-        {
-            "imgPath": "img/places/thailand.jpg",
-            "imgLocation": "Thailand",
-            "description": "Beachline",
-            "date": "01/12/2016"
-        },
-        {
-            "imgPath": "img/places/turkey.jpg",
-            "imgLocation": "Turkey",
-            "description": "Istanbul",
-            "date": "01/13/2016"
         }
   ]
 }

@@ -50,49 +50,38 @@ var mJson;
 var mUrl = 'images.json';
 
 function GalleryImage() {
-  //implement me as an object to hold the following data about an image:
-  //1. location where photo was taken
-  //2. description of photo
-  //3. the date when the photo was taken
-  //4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
-
   var location;
   var description;
   var date;
   var img;
-
 }
 
 function swapPhoto() {
 
-  if (mCurrentIndex >= mImages.length) {
-    mCurrentIndex = 0;
-  }
-  if (mCurrentIndex < 0) {
-    mCurrentIndex = mImages.length - 1
-  }
+  
+if(mCurrentIndex >= mImages.length) {
+  mCurrentIndex = 0;
+}
 
-  document.getElementById("photo").src = mImages.images[mCurrentIndex].imgPath;
+if(mCurrentIndex < 0){
+  mCurrentIndex = mImages.length - 1;
+}
+
+  document.getElementById("photo").src = mJson.images[mCurrentIndex].imgPath;
   var loc = document.getElementsByClassName('location');
-  loc[0].innerHTML = "Location: " + mImages.images[mCurrentIndex].imgLocation;
+  loc[0].innerHTML = "Location: " + mJson.images[mCurrentIndex].imgLocation;
   var des = document.getElementsByClassName('description');
-  des[0].innerHTML = "Description: " + mImages.images[mCurrentIndex].description;
+  des[0].innerHTML = "Description: " + mJson.images[mCurrentIndex].description;
   var dt = document.getElementsByClassName('date');
-  dt[0].innerHTML = "Date: " + mImages.images[mCurrentIndex].date;
+  dt[0].innerHTML = "Date: " + mJson.images[mCurrentIndex].date;
+
 
   
 
 
 
   mLastFrameTime = 0;
-  mCurrentIndex += 1;
-
-
-
-
-
-
-
+  mCurrentIndex++;
   console.log('swap photo');
 }
 
@@ -113,6 +102,22 @@ $(document).ready(function() {
   // This initially hides the photos' metadata information
   // $('.details').eq(0).hide();
 
+  $("nextPhoto").position({
+    my: "right bottom",
+    at: "right bottom",
+    of: "#nav"
+  });
+
+  const urlParams = new URLSearchParams(window.location.search);
+
+  for(const [key, value] of urlParams){
+    console.log(`${key}:${value}`);
+    mUrl = value;
+  }
+  if(mUrl == undefined){
+    mUrl = 'images.json';
+  }
+
 });
 
 window.addEventListener('load', function() {
@@ -121,7 +126,7 @@ window.addEventListener('load', function() {
 
 }, false);
 
-function iterateJSON(){
+function iterateJSON(mJson){
 
   for(var x = 0; x < mJson.images.length; x++){
     mImages[x] = new GalleryImage();
@@ -134,17 +139,31 @@ function iterateJSON(){
 
 
 }
+function toggleDetails(){
+  if($(".moreIndicator").hasClass("rot90")){
+    $(".moreIndicator").removeClass("rot90");
+    $(".moreIndicator").addClass("rot270");
+  } else {
+    $(".moreIndicator").removeClass("rot270");
+    $(".moreIndicator").addClass("rot90");
+  }
+  $(".details").slideToggle("slow", "linear");
+}
+
 
 function fetchJSON() {
   mRequest.onreadystatechange = function() {
     console.log("ready state change!");
     if (this.readyState == 4 && this.status == 200) {
-      mImages = JSON.parse(mRequest.responseText);
+      mJson = JSON.parse(mRequest.responseText);
+      iterateJSON(mJson);
     }
   }
   mRequest.open("GET", mUrl, true);
   mRequest.send();
 }
+
+
 
 
 

@@ -12,10 +12,10 @@
 
 <body>
   <div id="photoBooth">
-    <p class="banner">IS219 Slide Show</p>
+    <p class="banner">Tyler's IS219 Slide Show</p>
     <div id="slideShow">
       <div class="photoHolder">
-        <img class="thumbnail" id="photo" src="http://placehold.it/518x389?text=Welcome+to+my+Gallery"
+        <img class="thumbnail" id="photo" src="img/places/jordan.png"
           alt="Gallery Image" />
       </div>
       <img class="moreIndicator rot90" src="img/more.png" alt="More Content" />
@@ -24,13 +24,37 @@
         <img id="nextPhoto" src="img/arrow.png" alt="Next Photo" />
       </div>
       <div class="details">
-        <p class="location">Location : </p>
-        <p class="description">Description: </p>
-        <p class="date">Date: </p>
+        <p class="location">Location : Petra, Jordan
+
+        </p>
+        <p class="description">Description: The Rose City</p>
+        <p class="date">Date: 01/07/2016</p>
       </div>
 
     </div>
   </div>
+
+<script>
+  $("#prevPhoto" ).click(function() {
+    mCurrentIndex -= 2;
+    swapPhoto();
+  });
+</script>
+
+<script>
+$("#nextPhoto" ).click(function() {
+    swapPhoto();
+  });
+</script>
+
+<script>
+  $(".moreIndicator" ).click(function() {
+      toggleDetails();
+    });
+  </script>
+
+
+
 </body>
 
 </html>
