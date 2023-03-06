@@ -35,11 +35,19 @@
   </div>
 
 <script>
+
+
+//Allows user to click button on left.
+
+
   $("#prevPhoto" ).click(function() {
     mCurrentIndex -= 2;
     swapPhoto();
   });
 </script>
+
+
+<!-- Allows user to click button on right -->
 
 <script>
 $("#nextPhoto" ).click(function() {
@@ -47,6 +55,9 @@ $("#nextPhoto" ).click(function() {
   });
 </script>
 
+
+
+<!-- Allows user to click the button in the middle to hide information. -->
 <script>
   $(".moreIndicator" ).click(function() {
       toggleDetails();

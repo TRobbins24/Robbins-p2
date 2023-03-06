@@ -49,12 +49,17 @@ var mJson;
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
 var mUrl = 'images.json';
 
+//Method variables to be called elsewhere
+
 function GalleryImage() {
   var location;
   var description;
   var date;
   var img;
 }
+
+
+//Takes the current index of the json image array and sets them equal to a new one to swap photos after a certain time interval.
 
 function swapPhoto() {
 
@@ -97,6 +102,9 @@ if(mCurrentIndex < 0){
 //   }
 // }
 
+
+//This function checks for when the website is ready to start taking in code.
+
 $(document).ready(function() {
 
   // This initially hides the photos' metadata information
@@ -106,6 +114,7 @@ $(document).ready(function() {
     my: "right bottom",
     at: "right bottom",
     of: "#nav"
+
   });
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -126,6 +135,9 @@ window.addEventListener('load', function() {
 
 }, false);
 
+
+//This method loops through the json data and adds it to the GalleryImage method each loop.
+
 function iterateJSON(mJson){
 
   for(var x = 0; x < mJson.images.length; x++){
@@ -139,6 +151,9 @@ function iterateJSON(mJson){
 
 
 }
+
+//Simple function to hide the extra data of the images. 
+
 function toggleDetails(){
   if($(".moreIndicator").hasClass("rot90")){
     $(".moreIndicator").removeClass("rot90");
@@ -151,6 +166,8 @@ function toggleDetails(){
 }
 
 
+
+//Fetches the json file we created and ensures it doesn't crash. If it does it will not load.
 function fetchJSON() {
   mRequest.onreadystatechange = function() {
     console.log("ready state change!");
